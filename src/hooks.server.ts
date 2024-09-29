@@ -6,8 +6,8 @@ import { redirect } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ event, resolve }) => {
 	event.locals.supabase = createSupabaseServerClient({
-		supabaseUrl: PUBLIC_SUPABASE_URL,
-		supabaseKey: PUBLIC_SUPABASE_ANON_KEY,
+		supabaseUrl: 'https://hunqastofvereessimol.supabase.co',
+		supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh1bnFhc3RvZnZlcmVlc3NpbW9sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjYyNDU3NTAsImV4cCI6MjA0MTgyMTc1MH0.0gO6vyGHyPbazwCI--b404bbxKn1l8K9HbRY_m9kAoc',
 		event
 	});
 
@@ -29,21 +29,21 @@ export const handle: Handle = async ({ event, resolve }) => {
 	if (event.url.pathname.startsWith('/dashboard')) {
 		if (!session) {
 			// the user is not signed in
-			redirect(303, '/');
+			throw redirect(303, '/');
 		}
 	}
 
 	if (event.url.pathname.startsWith('/dashboard/_admin')) {
 		if (!imAdmin(session?.user)) {
 			console.log('You are not ADMIN!');
-			redirect(303, '/dashboard');
+			throw redirect(303, '/dashboard');
 		}
 	}
 
 	if (event.url.pathname.startsWith('/dashboard/_super')) {
 		if (!imSuper(session?.user)) {
 			console.log('You are not SUPER!');
-			redirect(303, '/dashboard');
+			throw redirect(303, '/dashboard');
 		}
 	}
 

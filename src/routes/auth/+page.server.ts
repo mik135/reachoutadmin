@@ -6,7 +6,7 @@ import type { Actions, PageServerLoad } from './$types';
 export const load: PageServerLoad = async ({ locals: { getSession } }) => {
 	const session = await getSession();
 	if (session?.user) {
-		redirect(303, '/dashboard');
+		throw redirect(303, '/dashboard');
 	}
 };
 
@@ -40,9 +40,9 @@ export const actions: Actions = {
 		}
 
 		if (to) {
-			redirect(303, to);
+			throw redirect(303, to);
 		} else {
-			redirect(303, '/dashboard');
+			throw redirect(303, '/dashboard');
 		}
 	},
 
@@ -70,7 +70,7 @@ export const actions: Actions = {
 			});
 		}
 
-		redirect(303, '/dashboard/startup');
+		throw redirect(303, '/dashboard/startup');
 	},
 
 	// invite: async ({ request, locals: { supabase, getSession } }) => {
@@ -93,7 +93,7 @@ export const actions: Actions = {
 
 		// console.log(PUBLIC_SITE_URL + '/auth?reset')
 		const { error } = await supabase.auth.resetPasswordForEmail(email, {
-			redirectTo: PUBLIC_SITE_URL + '/auth?reset'
+			redirectTo:  '/auth?reset'
 		});
 
 		if (error) {
@@ -131,11 +131,11 @@ export const actions: Actions = {
 			});
 		}
 
-		redirect(303, '/dashboard');
+		throw redirect(303, '/dashboard');
 	},
 
 	signout: async ({ locals: { supabase } }) => {
 		await supabase.auth.signOut();
-		redirect(303, '/');
+		throw redirect(303, '/');
 	}
 };

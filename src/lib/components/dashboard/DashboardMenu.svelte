@@ -44,14 +44,6 @@
 			<span slot="icon"><HomeIcon /></span>
 		</NavBarButton>
 
-		<NavBarButton tooltip="Tables" dest="/dashboard/tables">
-			<span slot="icon"><LayoutIcon /></span>
-		</NavBarButton>
-
-		<NavBarButton tooltip="Products" dest="/dashboard/products">
-			<span slot="icon"><RadioIcon /></span>
-		</NavBarButton>
-
 		<NavBarButton tooltip="People" dest="/dashboard/people">
 			<span slot="icon"><UsersIcon /></span>
 		</NavBarButton>

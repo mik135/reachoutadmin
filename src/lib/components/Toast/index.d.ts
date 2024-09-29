@@ -36,7 +36,7 @@ export interface SvelteToastOptions {
 	theme?: { [key: string]: string | number };
 	classes?: string[];
 	component?: {
-		src: typeof SvelteComponent<any>;
+		src: typeof SvelteComponent;
 		props?: { [key: string]: any };
 		sendIdTo?: string;
 	};

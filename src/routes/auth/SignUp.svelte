@@ -18,8 +18,8 @@
 	}
 </script>
 
-<div class="card-body">
-	<h1 class="text-center text-4xl mb-6">Sign Up</h1>
+<div class="card-body w-[90vw] max-w-[500px]">
+	<h1 class="text-4xl mb-6">Sign Up</h1>
 
 	<form
 		method="POST"
@@ -41,29 +41,29 @@
 				id="email"
 				name="email"
 				value={form?.values?.email ?? ''}
-				class="input text-center"
+				class="input"
 				type="email"
-				placeholder="email"
+				placeholder="Email"
 				required
 			/>
 
 			<input
 				id="password"
 				name="password"
-				class="input text-center mt-2"
+				class="input mt-2"
 				type="password"
 				bind:value={password}
-				placeholder="enter password"
+				placeholder="Enter password"
 				required
 			/>
 
 			<input
 				id="password"
 				name="password"
-				class="input text-center mt-2"
+				class="input mt-2"
 				type="password"
 				bind:value={password2}
-				placeholder="confirm password"
+				placeholder="Confirm Password"
 				required
 			/>
 		</div>
@@ -73,7 +73,7 @@
 		</div>
 
 		<div class="text-sm text-secondary text-center">
-			<a class="link no-underline" href="?signin">Already have an account? Sign-In</a>
+			<a class="link no-underline" href="?signin">Already have an account? <span class="font-bold">Sign-In</span></a>
 		</div>
 	</form>
 </div>

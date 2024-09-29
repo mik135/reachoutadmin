@@ -2,7 +2,6 @@
 	import { navigating } from '$app/stores';
 	import DashboardMenu from '$lib/components/dashboard/DashboardMenu.svelte';
 	import DashboardNavBar from '$lib/components/dashboard/DashboardNavBar.svelte';
-	import DemoUserNotice from '$lib/components/DemoMode/DemoUserNotice.svelte';
 	import { Toast } from '$lib/components/Toast';
 	import { onMount } from 'svelte';
 	import { Jumper } from 'svelte-loading-spinners';
@@ -31,8 +30,6 @@
 				<slot />
 			{/if}
 		</div>
-		<div class="w-full px-5 overflow-none">
-			<DemoUserNotice />
-		</div>
+		
 	</div>
 </section>

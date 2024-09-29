@@ -6,7 +6,7 @@
 	let loading = false;
 </script>
 
-<div class="card-body">
+<div class="card-body w-[90vw] max-w-[500px]">
 	<h1 class="text-center text-4xl mb-6">Forgot password?</h1>
 
 	<form
@@ -29,9 +29,9 @@
 				id="email"
 				name="email"
 				value={form?.values?.email ?? ''}
-				class="input text-center"
+				class="input"
 				type="email"
-				placeholder="email"
+				placeholder="Enter your email"
 				required
 			/>
 		</div>

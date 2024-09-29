@@ -22,7 +22,7 @@
 <div class="toast toast-top w-full z-50">
 	<ul>
 		{#each items as item (item.id)}
-			<li class="mb-2" in:fly|global={item.intro} out:fade|global animate:flip={{ duration: 200 }}>
+			<li class="mb-2" in:fly={item.intro} out:fade animate:flip={{ duration: 200 }}>
 				<ToastItem {item} />
 			</li>
 		{/each}

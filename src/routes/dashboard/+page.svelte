@@ -1,5 +1,5 @@
 <script>
-	// import { browser } from '$app/environment';
+	// reachoutworld@reach-437021.iam.gserviceaccount.com import { browser } from '$app/environment';
 
 	import WeatherChart from '$lib/components/dashboard/WeatherChart.svelte';
 	import { toast } from '$lib/components/Toast';
@@ -15,60 +15,61 @@
 	<title>Dashboard</title>
 </svelte:head>
 
-<div class="alert alert-success shadow-lg mb-5">
-	<div>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			class="stroke-current flex-shrink-0 h-6 w-6"
-			fill="none"
-			viewBox="0 0 24 24"
-			><path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2"
-				d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-			/></svg
-		>
-		<span>Welcome to SvelteKit Supabase Dashboard!</span>
-	</div>
-	<div class="flex-none">
-		<!-- <button class="btn btn-sm btn-primary">OK</button> -->
-		<a class="btn btn-sm btn-primary" href="https://github.com/xulioc/sveltekit-supabase-dashboard"
-			>GITHUB</a
-		>
-	</div>
-</div>
-
-<!-- {#if $page.data.session.user.app_metadata.role=='admin'}
-ADMIN
-	
-{/if} -->
 
 <div class="card flex-col bg-base-100 shadow-xl">
-	<div class="stats bg-primary text-primary-content">
-		<div class="stat">
+	<div class="flex flex-wrap lg:grid md:grid-cols-2 lg:grid-cols-3 gap-9 bg-primary text-primary-content bg-transparent">
+		<div class="stat col-span-1">
 			<div class="stat-title">You are in</div>
 			<div class="stat-value">{data.location.region} ({data.location.country_name})</div>
+		</div>
+
+		<div class="stat bg-orange-600 py-9 col-span-1">
+			<div class="stat-title">No of Registered Users</div>
+			<div class="stat-value">{data.userCount}</div>
 			<div class="stat-actions">
-				<button on:click={action} class="btn btn-sm btn-success">Yes I DO!</button>
+				<a href="/dashboard/people"><button class="btn btn-primary">See User's Info</button></a>
+				
 			</div>
 		</div>
 
-		<div class="stat">
-			<div class="stat-title">Temperature in {data.location.city}</div>
-			<div class="stat-value">{data.weather.current_weather.temperature} ºC</div>
+		<div class="stat bg-blue-600 py-9 col-span-1">
+			<div class="stat-title">No of Unique Vistors</div>
+			<div class="stat-value">10</div>
 			<div class="stat-actions">
-				<button class="btn btn-sm">i feel hot</button>
-				<button class="btn btn-sm">i feel cold</button>
+				
+				
 			</div>
 		</div>
+		<div class="stat bg-green-600 py-9 col-span-1">
+			<div class="stat-title">No of Visits</div>
+			<div class="stat-value">12</div>
+			<div class="stat-actions">
+				
+				
+			</div>
+		</div>
+		<div class="stat bg-yellow-600 py-9 col-span-1">
+			<div class="stat-title">No of Downloads</div>
+			<div class="stat-value">15</div>
+			<div class="stat-actions">
+				
+				
+			</div>
+		</div>
+		<div class="stat bg-indigo-600 py-9 col-span-1">
+			<div class="stat-title">Country with the most visits</div>
+			<div class="stat-value">Nigeria</div>
+			<div class="stat-actions">
+				
+				
+			</div>
+		</div>
+
+		
 	</div>
 </div>
 
-<div class="card mt-5 p-3 bg-neutral shadow-xl">
-	<h1 class="text-center text-2xl font-bold">Temperature forecast at {data.location.city}</h1>
-	<div><WeatherChart weather={data.weather} /></div>
-</div>
+
 
 <div class="card flex-col lg:flex-row bg-base-200 shadow-xl mt-5">
 	<div class="hero">
@@ -81,10 +82,9 @@ ADMIN
 				class="max-w-sm rounded-lg shadow-2xl"
 			/> -->
 			<div>
-				<h1 class="text-5xl font-bold">Box Office News!</h1>
+				<h1 class="text-5xl font-bold">Loveworld News!</h1>
 				<p class="py-6">
-					Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi
-					exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
+					The “Your LoveWorld Specials” series, hosted by Pastor Chris Oyakhilome, continues to inspire and educate believers around the world. These events offer deep spiritual insights and have become a source of encouragement for many
 				</p>
 				<button class="btn btn-primary">Get Started</button>
 			</div>
@@ -112,3 +112,15 @@ ADMIN
 	<a href="#item3" class="btn btn-xs">3</a>
 	<a href="#item4" class="btn btn-xs">4</a>
 </div>
+
+<style>
+	.stat-title {
+		color: white;
+		font-weight: 800;
+		font-family: monospace;
+		font-size: 20px;
+	}
+	.stat {
+		border-radius: 20px;
+	}
+</style>

@@ -34,10 +34,10 @@
 	}
 </script>
 
-<div in:fade|global class="flex justify-center align-middle h-screen w-screen">
+<div in:fade class="flex justify-center align-middle h-screen w-screen">
 	<div class="flex my-auto align-middle justify-center w-1/2">
 		<div>
-			<div class="card my-5 w-full max-w-sm shadow-2xl bg-black">
+			<div class="card my-5 w-full shadow-2xl bg-black">
 				{#if $logo}
 					<img class="mx-10 mt-10" alt="logo" src={$logo} />
 				{/if}
@@ -54,7 +54,7 @@
 				{/if}
 			</div>
 			{#if form?.error}
-				<div in:fade|global class="alert alert-error shadow-lg">
+				<div in:fade class="alert alert-error shadow-lg">
 					<div>
 						<FrownIcon />
 						<span>{form?.error}</span>
@@ -63,7 +63,7 @@
 			{/if}
 
 			{#if form?.message}
-				<div in:fade|global class="alert alert-success shadow-lg">
+				<div in:fade class="alert alert-success shadow-lg">
 					<div>
 						<SmileIcon />
 						<span>{form?.message}</span>

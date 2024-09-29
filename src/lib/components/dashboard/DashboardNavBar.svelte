@@ -8,20 +8,17 @@
 <div class="navbar px-5 border-b border-opacity-10 border-base-content">
 	<!-- APP TITLE  -->
 	<div class="flex-1">
-		<a href="/dashboard" class="link no-underline text-xl">
-			{PUBLIC_APP_NAME}
+		<a href="/dashboard" class="link no-underline text-xl font-bold font-mono">
+			Reachout Dashboard
 		</a>
 	</div>
 
 	<!-- USER -->
 	{#if $page.data.session.user}
 		<div class="px-5">
-			<!-- <div class={role === 'admin' ? 'text-accent' : ''}> -->
+			
 			<div>
-				{$page.data.session?.user.email}
-				{#if $page.data.session?.user.app_metadata.org?.name}
-					({$page.data.session?.user.app_metadata.org?.name})
-				{/if}
+				<h3 class="font-bold text-lg">{$page.data.session?.user.email}</h3>
 			</div>
 		</div>
 	{/if}
@@ -32,7 +29,7 @@
 			<!-- this hidden checkbox controls the state -->
 			<input data-toggle-theme="business, light" data-act-class="ACTIVECLASS" type="checkbox" />
 			<MoonIcon class="swap-on fill-current" />
-			<SunIcon class="swap-off fill-curren" />
+			<SunIcon class="swap-off fill-current" />
 		</label>
 	</div>
 
