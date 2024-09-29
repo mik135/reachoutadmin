@@ -12,7 +12,7 @@
 	<h1 class="text-center text-4xl mb-8">Send invite link</h1>
 
 	{#if form?.error}
-		<div in:fade class="alert alert-error shadow-lg">
+		<div in:fade|global class="alert alert-error shadow-lg">
 			<div>
 				<FrownIcon />
 				<span>{form?.error}</span>

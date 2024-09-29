@@ -24,7 +24,7 @@
 <slot {confirm} />
 
 {#if showDialog}
-	<div class="modal modal-open" in:fade={{ duration: 200 }} out:fade={{ delay: 50, duration: 200 }}>
+	<div class="modal modal-open" in:fade|global={{ duration: 200 }} out:fade|global={{ delay: 50, duration: 200 }}>
 		<div class="modal-box">
 			<h3 class="font-bold text-lg">
 				<slot name="title">Are you sure you want to perform this action?</slot>

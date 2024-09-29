@@ -6,7 +6,7 @@ import type { Actions, PageServerLoad } from './$types';
 export const load: PageServerLoad = async ({ locals: { getSession } }) => {
 	const session = await getSession();
 	if (session?.user) {
-		throw redirect(303, '/dashboard');
+		redirect(303, '/dashboard');
 	}
 };
 
@@ -40,9 +40,9 @@ export const actions: Actions = {
 		}
 
 		if (to) {
-			throw redirect(303, to);
+			redirect(303, to);
 		} else {
-			throw redirect(303, '/dashboard');
+			redirect(303, '/dashboard');
 		}
 	},
 
@@ -70,7 +70,7 @@ export const actions: Actions = {
 			});
 		}
 
-		throw redirect(303, '/dashboard/startup');
+		redirect(303, '/dashboard/startup');
 	},
 
 	// invite: async ({ request, locals: { supabase, getSession } }) => {
@@ -131,11 +131,11 @@ export const actions: Actions = {
 			});
 		}
 
-		throw redirect(303, '/dashboard');
+		redirect(303, '/dashboard');
 	},
 
 	signout: async ({ locals: { supabase } }) => {
 		await supabase.auth.signOut();
-		throw redirect(303, '/');
+		redirect(303, '/');
 	}
 };

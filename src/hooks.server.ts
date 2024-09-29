@@ -29,21 +29,21 @@ export const handle: Handle = async ({ event, resolve }) => {
 	if (event.url.pathname.startsWith('/dashboard')) {
 		if (!session) {
 			// the user is not signed in
-			throw redirect(303, '/');
+			redirect(303, '/');
 		}
 	}
 
 	if (event.url.pathname.startsWith('/dashboard/_admin')) {
 		if (!imAdmin(session?.user)) {
 			console.log('You are not ADMIN!');
-			throw redirect(303, '/dashboard');
+			redirect(303, '/dashboard');
 		}
 	}
 
 	if (event.url.pathname.startsWith('/dashboard/_super')) {
 		if (!imSuper(session?.user)) {
 			console.log('You are not SUPER!');
-			throw redirect(303, '/dashboard');
+			redirect(303, '/dashboard');
 		}
 	}
 

@@ -9,5 +9,5 @@ export const load: PageServerLoad = async ({ fetch }) => {
 		return products;
 	}
 
-	throw error(404, 'Not found');
+	error(404, 'Not found');
 };

@@ -11,5 +11,5 @@ export async function load() {
 		users: users
 	};
 
-	throw error(404, 'Not found');
+	error(404, 'Not found');
 }

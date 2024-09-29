@@ -9,8 +9,8 @@ export const load: PageServerLoad = async ({ fetch }) => {
 			return users;
 		}
 	} catch {
-		throw error(404, 'SOMETHING WRONG');
+		error(404, 'SOMETHING WRONG');
 	}
 
-	throw error(404, 'Not found');
+	error(404, 'Not found');
 };
