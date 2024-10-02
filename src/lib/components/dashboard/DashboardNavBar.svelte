@@ -7,7 +7,7 @@
 <div class="navbar px-5 border-b border-opacity-10 border-base-content">
 	<!-- APP TITLE  -->
 	<div class="flex-1">
-		<div>
+		<div class="md:hidden">
 			<MenuIcon />
 		</div>
 		<a href="/dashboard" class="hidden md:link md:no-underline md:text-xl md:font-bold md:font-mono">
@@ -17,10 +17,10 @@
 
 	<!-- USER -->
 	{#if $page.data.session.user}
-		<div class="px-5">
+		<div class="hidden md:px-5">
 			
 			<div>
-				<h3 class="font-bold text-lg">{$page.data.session?.user.email}</h3>
+				<h3 class="hidden md:font-bold md:text-lg">{$page.data.session?.user.email}</h3>
 			</div>
 		</div>
 	{/if}
