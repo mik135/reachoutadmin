@@ -5,7 +5,7 @@
 </script>
 
 <!-- NAV BAR -->
-<div class="navbar px-5 border-b border-opacity-10 border-base-content">
+<div class="md:navbar md:px-5 md:border-b md:border-opacity-10 md:border-base-content hidden">
 	<!-- APP TITLE  -->
 	<div class="flex-1">
 		<a href="/dashboard" class="link no-underline text-xl font-bold font-mono">
