@@ -55,7 +55,7 @@
 		<div class="max-md:my-0 divider" />
 
 		{#if isAdmin(role)}
-			<NavBarButton tooltip="Admin Users" dest="/dashboard/_admin/users">
+			<NavBarButton tooltip="Admins" dest="/dashboard/_admin/users">
 				<span slot="icon"><UsersIcon class="stroke-warning" /></span>
 			</NavBarButton>
 			<div class="divider" />
