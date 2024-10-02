@@ -17,3 +17,20 @@
 
 
 <div style="padding:63% 0 0 0; position:relative;"><iframe src="https://app.databox.com/datawall/72d470bb2fd7c6d8ff0bd5948323732e3d7c29466fbaf39?i" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+
+
+<style>
+	.gridboard-item {
+		border: 3px solid black;
+	}
+	@media screen and (width < 700px) {
+		.gridboard {
+			display: grid;
+			grid-template-columns: 1fr;
+		}
+		.gridboard-item {
+			grid-column: span 1;
+		}
+	}
+	
+</style>
