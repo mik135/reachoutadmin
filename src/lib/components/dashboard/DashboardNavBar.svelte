@@ -26,14 +26,6 @@
 	{/if}
 
 	<!-- THEME CHANGE -->
-	<div class="flex-none mx-3">
-		<label class="btn btn-ghost btn-circle swap swap-rotate">
-			<!-- this hidden checkbox controls the state -->
-			<input data-toggle-theme="business, light" data-act-class="ACTIVECLASS" type="checkbox" />
-			<MoonIcon class="swap-on fill-current" />
-			<SunIcon class="swap-off fill-current" />
-		</label>
-	</div>
 
 	<!-- ALERTS  -->
 	<div class="flex-none">
