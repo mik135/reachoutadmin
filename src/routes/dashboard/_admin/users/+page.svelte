@@ -58,6 +58,16 @@
 			disabled = true;
 		}
 	}
+
+	let autoPassword = ""
+
+	function generatePassword() {
+		for(let i = 0; i < 7; i++) {
+			let digit = Math.round(Math.random() * 10)
+			autoPassword += digit
+		}
+	}
+	generatePassword()
 </script>
 
 {#if view == 'home'}
@@ -106,32 +116,18 @@
 			<form method="POST" action="?/create" use:enhance>
 				<div class="form-control mt-5">
 					<label class="input-group">
-						<span class="w-1/5 text-xl bg-primary">Email</span>
+						<span class="w-1/5 text-xl bg-primary">User Name</span>
 						<input
 							autocomplete="username"
-							id="email"
-							name="email"
+							id="username"
+							name="username"
 							class="w-4/5 input input-bordered"
-							type="email"
-							placeholder="email"
+							type="text"
+							placeholder="John Doe"
 							required
 						/>
 					</label>
 				</div>
-
-				{#if roleSuper(data.session)}
-					<div class="form-control mt-5">
-						<label class="input-group">
-							<span class="w-1/5 text-xl bg-primary">Organization</span>
-							<select id="org" name="org" class="select select-bordered w-4/5">
-								<option disabled selected>Organization</option>
-								{#each data.orgs as org}
-									<option value={JSON.stringify(org)} class="block w-full">{org.name}</option>
-								{/each}
-							</select>
-						</label>
-					</div>
-				{/if}
 
 				<div class="form-control mt-5">
 					<label class="input-group">
@@ -157,6 +153,7 @@
 							class="w-4/5 input input-bordered"
 							type="password"
 							placeholder="enter password"
+							value={autoPassword}
 							required
 						/>
 					</label>
@@ -173,6 +170,7 @@
 							type="password"
 							placeholder="confirm password"
 							required
+							value={autoPassword}
 						/>
 					</label>
 				</div>
