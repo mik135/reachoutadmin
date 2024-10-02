@@ -17,7 +17,7 @@
 	const role: string = $page.data.session?.user.app_metadata.role ?? '';
 </script>
 
-<div class="flex flex-col h-full border-r border-opacity-10 border-base-content z-50 bg-black">
+<div class="hidden md:flex md:flex-col md:h-full md:border-r md:border-opacity-10 md:border-base-content md:z-50 md:bg-black">
 	<div class="navbar flex flex-col h-full bg-black">
 		<div class="mt-1 mb-8">
 			<a class="px-3 pt-2" href="/">
