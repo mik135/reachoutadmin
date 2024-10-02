@@ -1,8 +1,7 @@
 import type { User } from '@supabase/supabase-js';
 import type { Actions, PageServerLoad } from './$types';
 
-import { supabaseAdminClient as supabaseClient } from '$lib/server/supabase';
-import { roleAdmin, roleSuper } from '$lib/utils';
+import { supabaseAdminClient as supabaseClient } from '$lib/server/supabase.js';
 import { fail } from '@sveltejs/kit';
 
 export const load: PageServerLoad = async ({ locals: { supabase, getSession } }) => {
@@ -12,14 +11,8 @@ export const load: PageServerLoad = async ({ locals: { supabase, getSession } })
 	const res = await supabaseClient.auth.admin.listUsers();
 	let users: User[] = [];
 	let orgs = [];
-	// console.log(session.user)
-	if (roleAdmin(session)) {
-		users = res.data.users;
-
-		const r = await supabase.from('orgs').select('id, name');
-	} else {
-		users = res.data.users.filter((user) => user.app_metadata.org.id == org.id);
-	}
+	users = res.data.users;
+	
 	return { users };
 };
 

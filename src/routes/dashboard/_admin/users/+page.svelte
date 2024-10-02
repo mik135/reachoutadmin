@@ -15,7 +15,6 @@
 
 	let view = 'home';
 
-	// https://kit.svelte.dev/docs/form-actions#progressive-enhancement-custom-event-listener
 	const deleteAction = async (id: string) => {
 		const data = new FormData();
 		data.append('id', id);
