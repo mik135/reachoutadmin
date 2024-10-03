@@ -19,12 +19,10 @@
 	{#if $page.data.session.user}
 		<div class="hidden md:block md:px-5">
 			<div>
-				<h3 class="hidden md:font-bold md:text-lg">{$page.data.session?.user.email}</h3>
+				<h3 class="hidden md:block md:font-bold md:text-lg">{$page.data.session?.user.email}</h3>
 			</div>
 		</div>
 	{/if}
-
-	<!-- THEME CHANGE -->
 
 	<!-- ALERTS  -->
 	<div class="flex-none">
